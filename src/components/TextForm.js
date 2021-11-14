@@ -43,7 +43,7 @@ export default function TextForm(props) {
           color: props.mode === "light" ? "#444a50" : "white",
         }}
       >
-        <h1>{props.heading}</h1>
+        <h1 className="mb-4">TextUtils - Text Capitalizer</h1>
         <div className="mb-3">
           <textarea
             className="form-control"
@@ -52,21 +52,37 @@ export default function TextForm(props) {
             id="myBox"
             rows="8"
             style={{
-              backgroundColor: props.mode === "dark" ? "#444a50" : "white",
+              backgroundColor: props.mode === "dark" ? "#303438" : "white",
               color: props.mode === "dark" ? "white" : "#444a50",
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-2"
+          onClick={handleUpClick}
+        >
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLowClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-2"
+          onClick={handleLowClick}
+        >
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleClear}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-2"
+          onClick={handleClear}
+        >
           Clear Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleCopy}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-2"
+          onClick={handleCopy}
+        >
           Copy Text
         </button>
       </div>
@@ -80,7 +96,7 @@ export default function TextForm(props) {
         <p>
           {
             text.split(" ").filter((a) => {
-              return a.length != 0;
+              return a.length !== 0;
             }).length
           }{" "}
           Words | {text.length} Characters
@@ -95,7 +111,7 @@ export default function TextForm(props) {
         <h3>Time To Read</h3>
         <p>
           {text.split(" ").filter((a) => {
-            return a.length != 0;
+            return a.length !== 0;
           }).length * 0.005}{" "}
           Minutes
         </p>
