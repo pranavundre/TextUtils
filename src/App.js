@@ -34,7 +34,12 @@ function App() {
       {/* <Navbar /> */}
       {/* <Navbar title="TextUtils" aboutText="About Text" /> */}
       <Router>
-        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Navbar
+          title="TextUtils"
+          mode={mode}
+          toggleMode={toggleMode}
+          aboutText="About"
+        />
         <Alert alert={alert} />
         <div className="container my-3">
           <Switch>
